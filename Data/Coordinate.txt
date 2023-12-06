@@ -1,0 +1,4 @@
+North 6.07, South -11.08, West 94.8, East 140.99
+
+NS Lat
+WE Lon
