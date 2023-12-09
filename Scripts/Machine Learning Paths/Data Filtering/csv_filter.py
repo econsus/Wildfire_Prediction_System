@@ -1,7 +1,7 @@
 import os
 import csv
 
-def filter_csv_by_double_range(input_file_path, output_folder, output_file_name, column1_index, range1_start, range1_end, column2_index, range2_start, range2_end):
+def filter_csv(input_file_path, output_folder, output_file_name, column1_index, range1_start, range1_end, column2_index, range2_start, range2_end):
     """
     Filter data from a CSV file based on specified ranges in two columns.
     
@@ -52,4 +52,4 @@ column2_to_filter = 6  # 0-based index for the 7th column
 range2_start_value = 94.8  # Replace with your desired start value
 range2_end_value = 140.99  # Replace with your desired end value
 
-filter_csv_by_double_range(input_file_path, output_folder_path, output_file_name, column1_to_filter, range1_start_value, range1_end_value, column2_to_filter, range2_start_value, range2_end_value)
+filter_csv(input_file_path, output_folder_path, output_file_name, column1_to_filter, range1_start_value, range1_end_value, column2_to_filter, range2_start_value, range2_end_value)

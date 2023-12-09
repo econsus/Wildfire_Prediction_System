@@ -4,7 +4,7 @@ Only use on max 5 csv files at a time.
 
 How to use:
 
-1. combine_csv with 5 file.
+1. only use with up to 1 day worth of files.
 2. resulting in 1 file called combine_csv.csv
 3. filter the combine_csv.csv
 4. resulting in filtered_data.csv
