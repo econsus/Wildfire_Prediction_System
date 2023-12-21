@@ -20,7 +20,7 @@ def normalize_series(data, min, max):
 @app.route('/predict', methods=['POST'])
 def predict():
     #data = request.get_json(force=True)  # Get input data as JSON
-    data = Dataset('Data 2023')
+    data = Dataset('Data 2023.nc')
     # Preprocess the data as needed (matching model's input format)
     data = data.variables[['slhf','sshf']][:]
     data = np.array(data) #.reshape((1, 69, 185, 2))  # Assuming input shape
