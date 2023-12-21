@@ -1,0 +1,46 @@
+Deploy API!
+
+1. Write App (Flask, Tensorflow)
+2. Setup Google Cloud
+	Create new project
+	Activate - Cloud Run API and Cloud Build API
+3. Install and init Google Cloud SDK
+	https://cloud.google.com/sdk/docs/install
+4. Dockerfile, requirements.txt, .dockerignore
+	https://cloud.google.com/run/docs/quickstarts/build-and-deploy#containerizing
+5. Cloud build & Deploy
+	gcloud build submit --tag gcr.io/<project_id>/get_prediction
+	gcloud run deploy --image gcr.io/<project_id>/get_prediction --platform managed
+
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route("/", methods=["GET", "POST"])
+def index(): 
+	if request.method == "POST":
+		file = request.files.get('file')
+		if file is none or file.filename == "":
+			return jsonify({"error": "no file"})
+		
+		try:
+			pass
+		except Exception as e:
+			return jsonify({"error": str(e)})
+
+	return "OK"
+
+pip install flask tensorflow
+python app.py
+
+
+	
+	return "OK"
+import requests
+
+resp = request.post("http://localhost:5000/", files=('file': open('Final_classification_model.keras)
+
+print(resp.json())
+	
+
+wildfire-prediction-system-ch2-ps477-project (BUCKET)
