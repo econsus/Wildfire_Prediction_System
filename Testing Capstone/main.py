@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 from flask import Flask, request, jsonify
+from netCDF4 import Dataset
 
 app = Flask(__name__)
 
@@ -18,15 +19,17 @@ def normalize_series(data, min, max):
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    data = request.get_json(force=True)  # Get input data as JSON
-
+    #data = request.get_json(force=True)  # Get input data as JSON
+    data = Dataset('Data 2023')
     # Preprocess the data as needed (matching model's input format)
-    data = np.array(data['data']).reshape((1, 69, 185, 2))  # Assuming input shape
+    data = data.variables[['slhf','sshf']][:]
+    data = np.array(data) #.reshape((1, 69, 185, 2))  # Assuming input shape
     data = normalize_series(data, *data.min(axis=0), *data.max(axis=0))  # Use the function for normalization
 
     # Make prediction using the model
     prediction = model.predict(data)
-
+    #reshape the data to 1D array to get value for every point of coordinate
+    prediction = prediction.reshape((len(data)*69*185,4))
     # Process and return the prediction as required
     return jsonify({'prediction': prediction.tolist()})
 
