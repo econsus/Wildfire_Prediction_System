@@ -12,7 +12,6 @@ model = tf.keras.models.load_model('Final_classification_model.keras')  # Or use
 
 # Define the normalization function outside the predict function
 def normalize_series(data, min, max):
-    min = np.array(min)
     data = data - min
     data = data / (max - min)
     return data
