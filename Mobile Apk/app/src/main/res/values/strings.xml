@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">WildFire</string>
+    <string name="_20">20^</string>
+    <string name="hujan">Hujan</string>
+    <string name="kamis_20_oktober">Kamis, 20 Oktober</string>
+    <string name="kecepatan_angin">kecepatan angin</string>
+    <string name="kelembaban">kelembaban</string>
+    <string name="terkini">Terkini</string>
+    <string name="dirasakan">Dirasakan</string>
+    <string name="wilayah">Wilayah</string>
+    <string name="potensi_kebakaran">Potensi Kebakaran</string>
+    <string name="_12_desember_2022">12 Desember 2022</string>
+    <string name="keterangan">Keterangan</string>
+    <string name="kedalaman">Kedalaman</string>
+    <string name="posisi">Posisi</string>
+    <string name="terjadi">Terjadi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="skala">Skala</string>
+    <string name="wilayah_yang_terdampak">Wilayah yang terdampak</string>
+    <string name="wilayah1">Wilayah1</string>
+    <string name="wilayah2">Wilayah2</string>
+    <string name="wilayah3">Wilayah3</string>
+    <string name="wilayah4">Wilayah4</string>
+    <string name="wilayah5">Wilayah5</string>
+</resources>
