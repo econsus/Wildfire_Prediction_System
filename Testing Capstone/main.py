@@ -3,7 +3,6 @@ import numpy as np
 import tensorflow as tf
 import pandas as pd 
 from flask import Flask, request, jsonify
-from Sorting_NetCDF_CSV import sorted_data
 from NetcdfConvert_xarray import convert
 
 app = Flask(__name__)
@@ -21,11 +20,13 @@ def normalize_series(data, min, max):
 def predict():
     #data = request.get_json(force=True)  # Get input data as JSON
     data = convert('Data 2023.nc')
-    data = sorted_data(data)
     # Preprocess the data as needed (matching model's input format)
     data = data[['slhf','sshf']].values
-    data = normalize_series(data, data.min(axis=0), data.max(axis=0))  # Use the function for normalization
-    data = data.reshape((8367,69,185,2))
+    scaler=MinMaxScaler()
+    data = scaler.fit_transform(data)  # Use the function for normalization
+    data = data[~np.isnan(data)]
+    data = data.reshape((8390,69,185,2))
+    data = data[:24]
 
     # Make prediction using the model
     prediction = model.predict(data)
