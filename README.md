@@ -5,6 +5,22 @@ This is a repository consisting of project used for Bangkit 2023 Batch 2 Capston
 Google Cloud Run
 Data from Era-5 Satellite used for parameter for ML model training, taken from Copernicus Climate Data Store
 Data from Himawari-8 Satellite used for labelling for ML model training.
+All the python modules included: Numpy, Pandas, Tensorflow, sklearn, xarray, and flask
+
+# How to get the Data
+The dataset we used is available on: https://drive.google.com/drive/folders/1-6thxyOIPUVjqgvxJDQYcHqluKDdAzJc?usp=sharing
+But if you want to get the data yourself, you can follow this instruction
+For ERA5 data:
+1. Go to https://cds.climate.copernicus.eu/
+2. Login/register your account
+3. Go to the dataset section
+4. Search for 'ERA5 hourly'
+5. Select the 'ERA5 hourly data on single levels from 1940 to present
+6. Select the product type 'Reanalysis', variables 'Surface latent heatflux' and 'Surface sensible heatflux'
+7. Select the data time
+8. Then select the geographical area of Indonesia with: North 6.07, South -11.08, West 94.8, East 140.99
+9. Then select the data format of netCDF and submit form
+10. Go to your requests section and wait till the data is available for download
 
 # Setting up server in Google Cloud Run
 Deploy use Cloud Run Steps:
