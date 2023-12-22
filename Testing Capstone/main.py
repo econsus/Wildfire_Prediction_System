@@ -4,6 +4,7 @@ import tensorflow as tf
 import pandas as pd 
 from flask import Flask, request, jsonify
 from NetcdfConvert_xarray import convert
+from sklearn.preprocessing import MinMaxScaler
 
 app = Flask(__name__)
 
